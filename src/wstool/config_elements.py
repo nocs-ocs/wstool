@@ -42,6 +42,7 @@ from vcstools.vcs_base import VcsError
 from wstool.common import samefile, MultiProjectException
 from wstool.config_yaml import PathSpec
 from wstool.ui import Ui
+import time
 
 
 # helper class
@@ -357,6 +358,10 @@ class VCSConfigElement(ConfigElement):
         :param inplace: for symlinks, allows to delete contents
         at target location and checkout to there.
         """
+        wait_time_s = 5
+        print("Wait for " + str(wait_time_s) + "seconds")
+        print("to reduce the number of SSH requests per minute")
+        time.sleep(wait_time_s)
         if checkout is True:
             print("[%s] Fetching %s (version %s) to %s" % (
                 self.get_local_name(), self.uri, self.version, self.get_path()))
