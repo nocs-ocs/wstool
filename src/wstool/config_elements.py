@@ -359,7 +359,7 @@ class VCSConfigElement(ConfigElement):
         at target location and checkout to there.
         """
         wait_time_s = 5
-        print("Wait for " + str(wait_time_s) + "seconds")
+        print("Wait for " + str(wait_time_s) + " seconds")
         print("to reduce the number of SSH requests per minute")
         time.sleep(wait_time_s)
         if checkout is True:
